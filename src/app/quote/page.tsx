@@ -26,7 +26,7 @@ export default function QuotePage() {
                 <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-700 font-medium italic block mb-6">
                   REQUEST A QUOTE
                 </span>
-                <h1 className="font-serif text-5xl md:text-6xl text-teal-950 mb-6 tracking-tight leading-[1.05]">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-teal-950 mb-6 tracking-tight leading-[1.05]">
                   Tell us what you <span className="italic text-emerald-800 font-light block mt-2">are looking for.</span>
                 </h1>
                 <p className="text-teal-900/70 font-sans text-sm leading-relaxed tracking-wide max-w-xl">

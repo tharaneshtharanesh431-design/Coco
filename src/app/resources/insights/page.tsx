@@ -27,7 +27,7 @@ export default function InsightsPage() {
             </span>
           </div>
           
-          <h1 className="font-serif text-5xl md:text-7xl text-teal-950 mb-10 tracking-tight">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-teal-950 mb-10 tracking-tight break-words">
             Industry <span className="italic text-emerald-800 font-light">Insights.</span>
           </h1>
           

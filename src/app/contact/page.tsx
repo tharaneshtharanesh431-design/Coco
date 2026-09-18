@@ -31,7 +31,7 @@ export default function ContactPage() {
               <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-400 font-medium italic block mb-8">
                 CONTACT VERDECOCO
               </span>
-              <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] text-white mb-8 tracking-tight">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl leading-[1.05] text-white mb-8 tracking-tight break-words">
                 Let's discuss your <span className="italic text-emerald-400 font-light block mt-2">requirements.</span>
               </h1>
               <p className="text-teal-100/80 text-lg md:text-xl leading-relaxed font-light font-serif italic border-t border-teal-800/50 pt-8 max-w-2xl">

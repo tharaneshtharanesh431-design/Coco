@@ -42,7 +42,7 @@ export default function ResourcesPage() {
                 </span>
               </div>
               
-              <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] text-white mb-10 tracking-tight">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl leading-[1.05] text-white mb-10 tracking-tight">
                 Useful information, <span className="italic text-ivory/80 font-light block mt-2">clearly presented.</span>
               </h1>
               
@@ -108,7 +108,7 @@ export default function ResourcesPage() {
             <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-400 font-medium italic block mb-8">
               Commercial Requirements
             </span>
-            <h2 className="font-serif text-5xl md:text-6xl text-white tracking-tight leading-[1.1] mb-10">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-10">
               Have a specific <span className="italic font-light text-emerald-400">requirement?</span>
             </h2>
             <p className="text-teal-100/80 font-serif italic text-xl leading-relaxed mb-16 max-w-2xl mx-auto">

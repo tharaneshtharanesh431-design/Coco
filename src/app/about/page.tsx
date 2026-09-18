@@ -45,7 +45,7 @@ export default function AboutPage() {
                 </span>
               </div>
               
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-[7.5rem] leading-[1.05] text-white mb-12 tracking-tight">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl xl:text-[7.5rem] leading-[1.05] text-white mb-12 tracking-tight break-words">
                 Rooted in <span className="italic text-ivory/80 font-light">Nature.</span><br />
                 Connected to the <span className="italic text-ivory/80 font-light">World.</span>
               </h1>
@@ -137,7 +137,7 @@ export default function AboutPage() {
             
             <div className="lg:col-span-5">
               <ScrollFade direction="up">
-                <h2 className="font-serif text-5xl md:text-6xl text-teal-950 tracking-tight leading-[1.1] mb-10">
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-teal-950 tracking-tight leading-[1.1] mb-10 break-words">
                   Consistency begins <br/><span className="italic text-emerald-800 font-light">at the source.</span>
                 </h2>
                 <p className="text-teal-900/80 font-serif italic text-xl leading-relaxed mb-10">
@@ -204,7 +204,7 @@ export default function AboutPage() {
             <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-400 font-medium italic block mb-8">
               Global Reach
             </span>
-            <h2 className="font-serif text-5xl md:text-7xl text-white tracking-tight leading-[1.1] mb-10">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white tracking-tight leading-[1.1] mb-10 break-words">
               Built for <span className="italic font-light text-emerald-400">businesses.</span>
             </h2>
             <p className="text-teal-100/80 font-serif italic text-xl leading-relaxed mb-16 max-w-2xl mx-auto">
