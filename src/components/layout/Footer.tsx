@@ -4,9 +4,9 @@ import { Logo } from '../common/Logo';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-teal-950 pt-32 pb-12 border-t-8 border-emerald-700">
+    <footer className="bg-teal-950 pt-16 md:pt-32 pb-12 border-t-8 border-emerald-700">
       <div className="container mx-auto px-8 lg:px-16 max-w-[1600px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-16 xl:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-12 md:gap-16 xl:gap-8">
           
           {/* Brand Column */}
           <div className="xl:col-span-5 pr-0 xl:pr-24">
@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Links Columns */}
-          <div className="xl:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
+          <div className="xl:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             
             <div className="space-y-8">
               <h4 className="font-sans text-[10px] tracking-[0.2em] text-emerald-400 uppercase italic">Company</h4>
@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-32 pt-8 border-t border-teal-900/50 flex flex-col md:flex-row justify-between items-center text-teal-400/40 text-[10px] tracking-[0.1em] font-sans uppercase">
+        <div className="mt-16 md:mt-32 pt-8 border-t border-teal-900/50 flex flex-col md:flex-row justify-between items-center text-teal-400/40 text-[10px] tracking-[0.1em] font-sans uppercase">
           <p>© {new Date().getFullYear()} VERDECOCO. ALL RIGHTS RESERVED.</p>
           <div className="flex space-x-8 mt-6 md:mt-0">
             <Link href="/privacy" className="hover:text-teal-200 transition-colors">Privacy Policy</Link>

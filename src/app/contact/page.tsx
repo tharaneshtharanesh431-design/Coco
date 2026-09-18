@@ -19,7 +19,7 @@ export default function ContactPage() {
     <div className="flex flex-col w-full bg-ivory">
       
       {/* SECTION 1 — HERO */}
-      <section className="pt-40 pb-16 lg:pb-24 bg-teal-950 relative overflow-hidden">
+      <section className="pt-32 pb-12 md:pt-40 md:pb-16 lg:pb-24 bg-teal-950 relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-teal-950 via-teal-950/90 to-teal-950/60 z-10"></div>
           {/* Subtle background texture/pattern could go here if available, keeping it minimal */}
@@ -45,7 +45,7 @@ export default function ContactPage() {
       {/* SECTION 2 — CONTACT INFO & MARKETS */}
       <section className="section-padding bg-ivory relative z-10 -mt-8 rounded-t-3xl border-t border-teal-900/10">
         <div className="container-grid">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24">
             
             {/* Business Contact Panel */}
             <ScrollFade>

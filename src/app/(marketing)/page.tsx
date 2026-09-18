@@ -22,7 +22,7 @@ export default function Home() {
     <div className="flex flex-col w-full bg-ivory">
       
       {/* SECTION 1 — HERO REDESIGN */}
-      <section className="relative min-h-screen flex items-end pb-16 lg:pb-32 pt-40 overflow-hidden">
+      <section className="relative min-h-[70vh] md:min-h-screen flex items-end pb-12 md:pb-16 lg:pb-32 pt-32 md:pt-40 overflow-hidden">
         {/* Background Image: No heavy blur, subtle overlay for text contrast */}
         <div className="absolute inset-0 z-0 bg-teal-950">
           <Image 
@@ -40,7 +40,7 @@ export default function Home() {
           <ScrollFade direction="up">
             <div className="max-w-[1100px]">
               
-              <div className="flex items-center gap-6 mb-8 lg:mb-12">
+              <div className="flex items-center gap-6 mb-6 md:mb-8 lg:mb-12">
                 <Logo variant="compact" theme="emerald" className="w-6 h-6" />
                 <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-400 font-medium italic">
                   Indian Agricultural Exports
@@ -52,13 +52,13 @@ export default function Home() {
                 <span className="italic text-ivory/80 font-light break-words">to global scale.</span>
               </h1>
               
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end mt-12 lg:mt-24 border-t border-teal-800/50 pt-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-16 items-end mt-12 lg:mt-24 border-t border-teal-800/50 pt-10">
                 <div className="lg:col-span-7">
                   <p className="text-teal-100/90 text-lg md:text-xl leading-relaxed font-light font-serif italic max-w-2xl">
                     We supply premium agricultural products to international B2B buyers. Defined by absolute integrity, powered by reliable export operations.
                   </p>
                 </div>
-                <div className="lg:col-span-5 flex flex-col sm:flex-row gap-8 lg:justify-end">
+                <div className="lg:col-span-5 flex flex-col sm:flex-row gap-6 sm:gap-8 lg:justify-end">
                   <Link href="/products">
                     <Button variant="text" className="text-white hover:text-emerald-300 border-white/40 hover:border-emerald-300 text-sm" withArrow>
                       Explore Portfolio
@@ -79,7 +79,7 @@ export default function Home() {
       {/* SECTION 2 — WHO WE ARE (EDITORIAL) */}
       <section className="section-padding bg-ivory">
         <div className="container-grid">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-center">
             
             <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2">
               <ScrollFade direction="left">
@@ -119,7 +119,7 @@ export default function Home() {
       {/* SECTION 3 — WHAT WE SUPPLY (EDITORIAL GRID) */}
       <section className="section-padding bg-white">
         <div className="container-grid">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 lg:mb-32 border-b border-teal-900/10 pb-8">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-16 lg:mb-32 border-b border-teal-900/10 pb-8">
             <ScrollFade>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-teal-950 tracking-tight">
                 Our <span className="italic font-light break-words">Portfolio.</span>
@@ -207,7 +207,7 @@ export default function Home() {
       {/* SECTION 5 — FARM TO MARKET (VISUAL JOURNEY) */}
       <section className="section-padding bg-ivory overflow-hidden">
         <div className="container-grid">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 lg:gap-24 items-start">
             
             <div className="lg:col-span-5 sticky top-40">
               <ScrollFade direction="right">
@@ -340,7 +340,7 @@ export default function Home() {
       {/* SECTION 9 — BUSINESS CTA (MINIMALIST) */}
       <section className="section-padding bg-teal-950">
         <div className="container-grid max-w-5xl">
-          <ScrollFade direction="up" className="flex flex-col md:flex-row md:items-end justify-between gap-16">
+          <ScrollFade direction="up" className="flex flex-col md:flex-row md:items-end justify-between gap-10 md:gap-16">
             <div className="max-w-2xl">
               <h2 className="font-serif text-4xl md:text-6xl lg:text-[5rem] text-white tracking-tight leading-[1.05] mb-8">
                 Initiate a <br/> <span className="italic text-emerald-400 font-light break-words">partnership.</span>

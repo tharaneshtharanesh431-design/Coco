@@ -20,7 +20,7 @@
 @layer components {
   /* Minimal utilities for cases where we don't want a full component */
   .section-padding {
-    @apply py-24 lg:py-40;
+    @apply py-16 lg:py-40;
   }
   
   .container-grid {

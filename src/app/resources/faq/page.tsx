@@ -126,7 +126,7 @@ const jsonLd = {
 
 export default function FAQPage() {
   return (
-    <div className="flex flex-col w-full bg-ivory min-h-screen pt-40 pb-24">
+    <div className="flex flex-col w-full bg-ivory min-h-[70vh] md:min-h-screen pt-28 md:pt-40 pb-12 md:pb-24">
       
       {/* Inject JSON-LD */}
       <script
@@ -183,7 +183,7 @@ export default function FAQPage() {
           ))}
         </div>
 
-        <ScrollFade className="mt-24 pt-16 border-t border-teal-900/10 text-center">
+        <ScrollFade className="mt-16 md:mt-24 pt-10 md:pt-16 border-t border-teal-900/10 text-center">
           <h3 className="font-serif text-3xl text-teal-950 mb-8 italic">
             Have a specific requirement?
           </h3>

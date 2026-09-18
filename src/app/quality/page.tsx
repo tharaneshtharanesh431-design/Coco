@@ -21,7 +21,7 @@ export default function QualityPage() {
     <div className="flex flex-col w-full bg-ivory">
       
       {/* SECTION 1 — QUALITY HERO */}
-      <section className="relative min-h-[90vh] flex items-end pb-16 lg:pb-32 pt-40 overflow-hidden bg-teal-950">
+      <section className="relative min-h-[60vh] md:min-h-[90vh] flex items-end pb-16 lg:pb-32 pt-32 md:pt-40 overflow-hidden bg-teal-950">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/about-process.jpg"
@@ -94,7 +94,7 @@ export default function QualityPage() {
       {/* SECTION 3 — SOURCE & SELECTION */}
       <section className="section-padding bg-ivory">
         <div className="container-grid">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-center">
             
             <div className="lg:col-span-6 relative">
               <ScrollFade direction="right" className="relative w-full aspect-[4/5] bg-teal-950/5">
@@ -132,7 +132,7 @@ export default function QualityPage() {
       {/* SECTION 4 — GRADING & EXPORT PREPARATION (with Documentation) */}
       <section className="section-padding bg-white border-t border-teal-900/10">
         <div className="container-grid">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-center">
             
             <div className="lg:col-span-6 order-2 lg:order-1">
               <ScrollFade direction="right">
@@ -170,7 +170,7 @@ export default function QualityPage() {
       {/* SECTION 5 — PRODUCTS CONNECTION */}
       <section className="section-padding bg-ivory border-t border-teal-900/10">
         <div className="container-grid">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 lg:mb-24">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-16 lg:mb-24">
             <ScrollFade>
               <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-700 font-medium italic block mb-6">
                 Products

@@ -94,7 +94,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   };
 
   return (
-    <div className="flex flex-col w-full bg-ivory pt-32">
+    <div className="flex flex-col w-full bg-ivory pt-24 md:pt-32">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       
@@ -112,7 +112,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
       {/* PRODUCT HERO & OVERVIEW */}
       <section className="section-padding">
         <div className="container-grid">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16 lg:gap-24 items-start">
             
             {/* Image Column */}
             <div className="lg:col-span-7">
@@ -151,7 +151,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   {product.description}
                 </p>
 
-                <div className="flex flex-col gap-6 sm:flex-row mb-16">
+                <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
                   <Link href={`/quote?product=${product.slug}`}>
                     <Button variant="primary" className="w-full sm:w-auto" withArrow>
                       Request a Quote
@@ -217,7 +217,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </h2>
             </ScrollFade>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
               {relatedProducts.map((p) => (
                 <ScrollFade key={p.id} direction="up">
                   <ProductCard product={p} />

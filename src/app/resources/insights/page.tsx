@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function InsightsPage() {
   return (
-    <div className="flex flex-col w-full bg-ivory min-h-[90vh] pt-40 pb-24">
+    <div className="flex flex-col w-full bg-ivory min-h-[70vh] md:min-h-[90vh] pt-28 md:pt-40 pb-12 md:pb-24">
       <div className="container-grid max-w-4xl">
         
         <ScrollFade>

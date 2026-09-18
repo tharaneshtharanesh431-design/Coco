@@ -104,7 +104,7 @@ export const Navbar: React.FC = () => {
       <div 
         id="mobile-menu"
         className={cn(
-        "lg:hidden fixed inset-0 bg-ivory z-40 transition-transform duration-700 ease-[0.22,1,0.36,1] flex flex-col pt-32 pb-12 px-10 overflow-y-auto",
+        "lg:hidden fixed inset-0 bg-ivory z-40 transition-transform duration-700 ease-[0.22,1,0.36,1] flex flex-col pt-24 pb-8 px-10 overflow-y-auto",
         isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
       )}>
         <div className="flex flex-col space-y-6 sm:space-y-8 md:space-y-10 mt-8 mb-8 flex-1">

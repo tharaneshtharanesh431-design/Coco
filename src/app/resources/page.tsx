@@ -19,7 +19,7 @@ export default function ResourcesPage() {
     <div className="flex flex-col w-full bg-ivory">
       
       {/* SECTION 1 — RESOURCES HERO */}
-      <section className="relative min-h-[70vh] flex items-end pb-16 lg:pb-24 pt-40 overflow-hidden bg-teal-950">
+      <section className="relative min-h-[50vh] md:min-h-[70vh] flex items-end pb-16 lg:pb-24 pt-32 md:pt-40 overflow-hidden bg-teal-950">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-teal-950 via-teal-950/80 to-teal-950/40 z-10"></div>
           <Image 
@@ -61,7 +61,7 @@ export default function ResourcesPage() {
       <section className="section-padding bg-ivory relative z-10 -mt-8 rounded-t-3xl border-t border-teal-900/10">
         <div className="container-grid">
           
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
             
             {/* FAQ HUB */}
             <StaggerItem className="group relative border border-teal-900/10 p-10 lg:p-14 bg-white transition-colors hover:border-teal-900/30">

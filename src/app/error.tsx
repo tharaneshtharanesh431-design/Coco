@@ -18,7 +18,7 @@ export default function GlobalError({
   }, [error]);
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-ivory justify-center items-center text-center px-6 relative overflow-hidden">
+    <div className="flex flex-col w-full min-h-[70vh] md:min-h-screen bg-ivory justify-center items-center text-center px-6 relative overflow-hidden">
       
       {/* Background Logo Watermark */}
       <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none">

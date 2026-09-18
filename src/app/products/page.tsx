@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <div className="flex flex-col w-full bg-ivory pt-32">
+    <div className="flex flex-col w-full bg-ivory pt-24 md:pt-32">
       
       {/* SECTION 1 — PAGE HERO */}
-      <section className="section-padding pb-16 lg:pb-32">
+      <section className="section-padding pb-12 md:pb-16 lg:pb-32">
         <div className="container-grid">
           <ScrollFade direction="up">
             <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-700 font-medium italic block mb-8">
@@ -37,9 +37,9 @@ export default function ProductsPage() {
       </section>
 
       {/* SECTION 2 — PRODUCT COLLECTION */}
-      <section className="pb-32 lg:pb-48">
+      <section className="pb-16 md:pb-32 lg:pb-48">
         <div className="container-grid">
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 lg:gap-y-32">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 md:gap-y-24 lg:gap-y-32">
             {products.map((product, index) => (
               <StaggerItem key={product.id} className={index % 2 !== 0 ? 'md:mt-32' : ''}>
                 <ProductCard product={product} />
@@ -56,7 +56,7 @@ export default function ProductsPage() {
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-12">
               Looking for a <span className="italic text-emerald-400 font-light break-words">specific product?</span>
             </h2>
-            <div className="flex flex-col sm:flex-row justify-center gap-8">
+            <div className="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8">
               <Link href="/quote">
                 <Button variant="primary" size="lg" className="w-full sm:w-auto" withArrow>
                   Request a Quote

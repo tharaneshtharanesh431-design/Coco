@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 
 export default function QuotePage() {
   return (
-    <div className="flex flex-col w-full bg-ivory min-h-screen pt-40 pb-24">
+    <div className="flex flex-col w-full bg-ivory min-h-[70vh] md:min-h-screen pt-28 md:pt-40 pb-12 md:pb-24">
       <div className="container-grid">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 lg:gap-16">
           
           {/* Main Form Area */}
           <div className="lg:col-span-8">
