@@ -47,9 +47,9 @@ export default function Home() {
                 </span>
               </div>
               
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-[7.5rem] leading-[1.05] text-white mb-12 tracking-tight">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl xl:text-[7.5rem] leading-[1.05] text-white mb-12 tracking-tight">
                 From source <br />
-                <span className="italic text-ivory/80 font-light">to global scale.</span>
+                <span className="italic text-ivory/80 font-light break-words">to global scale.</span>
               </h1>
               
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end mt-12 lg:mt-24 border-t border-teal-800/50 pt-10">
@@ -84,7 +84,7 @@ export default function Home() {
             <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2">
               <ScrollFade direction="left">
                 <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-teal-950 mb-10 leading-[1.1] tracking-tight">
-                  A premium standard in <br/> <span className="italic text-emerald-800 font-light">agricultural export.</span>
+                  A premium standard in <br/> <span className="italic text-emerald-800 font-light break-words">agricultural export.</span>
                 </h2>
                 <div className="w-full h-px bg-teal-900/10 mb-10"></div>
                 <p className="text-teal-900 text-lg md:text-xl leading-relaxed font-serif italic max-w-xl mb-12">
@@ -121,8 +121,8 @@ export default function Home() {
         <div className="container-grid">
           <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 lg:mb-32 border-b border-teal-900/10 pb-8">
             <ScrollFade>
-              <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-teal-950 tracking-tight">
-                Our <span className="italic font-light">Portfolio.</span>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-teal-950 tracking-tight">
+                Our <span className="italic font-light break-words">Portfolio.</span>
               </h2>
             </ScrollFade>
             <ScrollFade delay={0.2} className="mt-6 md:mt-0">
@@ -181,7 +181,7 @@ export default function Home() {
         <div className="container-grid relative z-10">
           <ScrollFade>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl mb-24 max-w-4xl tracking-tight leading-tight text-white">
-              Quality begins <span className="italic text-emerald-400 font-light">long before shipment.</span>
+              Quality begins <span className="italic text-emerald-400 font-light break-words">long before shipment.</span>
             </h2>
           </ScrollFade>
           
@@ -211,7 +211,7 @@ export default function Home() {
             
             <div className="lg:col-span-5 sticky top-40">
               <ScrollFade direction="right">
-                <h2 className="font-serif text-5xl md:text-6xl text-teal-950 leading-[1.1] mb-10 tracking-tight">
+                <h2 className="font-serif text-4xl md:text-5xl md:text-6xl text-teal-950 leading-[1.1] mb-10 tracking-tight break-words">
                   The Journey. <br/>
                 </h2>
                 <div className="flex items-center gap-6 mb-12">
@@ -265,8 +265,8 @@ export default function Home() {
         
         <div className="relative z-10 container-grid max-w-5xl">
           <ScrollFade direction="up">
-            <h2 className="font-serif text-5xl md:text-7xl lg:text-[6rem] text-white leading-tight mb-10 tracking-tight">
-              Uncompromising <br/><span className="italic font-light text-ivory/90">integrity.</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-[6rem] text-white leading-tight mb-10 tracking-tight">
+              Uncompromising <br/><span className="italic font-light text-ivory/90 break-words">integrity.</span>
             </h2>
             <div className="w-16 h-px bg-white/30 mx-auto mb-10"></div>
             <p className="text-white/80 font-serif italic text-xl md:text-2xl font-light max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -287,8 +287,8 @@ export default function Home() {
           <ScrollFade>
             <Logo variant="compact" theme="dark" className="w-8 h-8 mx-auto mb-10 opacity-50" />
             <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-teal-900/50 mb-8 italic">International Trade</p>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-teal-950 tracking-tight leading-[1.1] mb-12">
-              Connecting supply with <br/> <span className="italic text-teal-800 font-light">global demand.</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-teal-950 tracking-tight leading-[1.1] mb-12">
+              Connecting supply with <br/> <span className="italic text-teal-800 font-light break-words">global demand.</span>
             </h2>
             <p className="text-teal-800/80 font-serif italic text-xl leading-relaxed max-w-2xl mx-auto mb-16">
               We facilitate international B2B transactions by bridging the gap between premium Indian agricultural supply and the demanding requirements of global buyers. Our operations support consistent volume and reliable delivery channels worldwide.
@@ -325,7 +325,7 @@ export default function Home() {
                 { step: "09", title: "Shipment" }
               ].map((item, index) => (
                 <ScrollFade key={index} direction="up" delay={index * 0.05} className="group border-b border-teal-900/20 py-8 flex items-center justify-between hover:bg-teal-950/5 transition-colors px-6 -mx-6 cursor-default">
-                  <div className="flex items-center gap-12 lg:gap-24">
+                  <div className="flex items-center gap-6 sm:gap-12 lg:gap-24">
                     <span className="font-sans text-[10px] tracking-[0.2em] text-teal-900/40 uppercase italic">{item.step}</span>
                     <span className="font-serif text-2xl md:text-3xl lg:text-4xl text-teal-950 italic group-hover:text-emerald-800 transition-colors">{item.title}</span>
                   </div>
@@ -342,8 +342,8 @@ export default function Home() {
         <div className="container-grid max-w-5xl">
           <ScrollFade direction="up" className="flex flex-col md:flex-row md:items-end justify-between gap-16">
             <div className="max-w-2xl">
-              <h2 className="font-serif text-5xl md:text-6xl lg:text-[5rem] text-white tracking-tight leading-[1.05] mb-8">
-                Initiate a <br/> <span className="italic text-emerald-400 font-light">partnership.</span>
+              <h2 className="font-serif text-4xl md:text-6xl lg:text-[5rem] text-white tracking-tight leading-[1.05] mb-8">
+                Initiate a <br/> <span className="italic text-emerald-400 font-light break-words">partnership.</span>
               </h2>
               <p className="text-teal-100/70 font-sans text-sm tracking-wide max-w-md leading-relaxed">
                 Contact our trade team to discuss your wholesale requirements, request a formal quotation, or learn more about our export capabilities.

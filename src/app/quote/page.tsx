@@ -62,7 +62,7 @@ export default function QuotePage() {
                       <Mail className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                       <div>
                         <span className="block text-[10px] uppercase tracking-[0.1em] text-teal-100/40 font-medium mb-1">Email</span>
-                        <span className="text-white font-sans text-sm group-hover:text-emerald-400 transition-colors">tharaneeshm2416@gmail.com</span>
+                        <span className="text-white font-sans text-sm group-hover:text-emerald-400 transition-colors break-words">tharaneeshm2416@gmail.com</span>
                       </div>
                     </a>
                   </li>

@@ -26,8 +26,8 @@ export default function ProductsPage() {
             <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-700 font-medium italic block mb-8">
               VERDECOCO / PRODUCTS
             </span>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-[7rem] text-teal-950 leading-[1.05] tracking-tight mb-12">
-              Products from the <br/> <span className="italic font-light text-emerald-800">heart of India.</span>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-[7rem] text-teal-950 leading-[1.05] tracking-tight mb-12">
+              Products from the <br/> <span className="italic font-light text-emerald-800 break-words">heart of India.</span>
             </h1>
             <p className="text-teal-900/80 text-lg md:text-xl font-serif italic max-w-2xl leading-relaxed">
               Our portfolio represents the intersection of rich agricultural heritage and rigorous modern export operations. Cultivated with care, graded with precision, and prepared for international wholesale.
@@ -53,8 +53,8 @@ export default function ProductsPage() {
       <section className="section-padding bg-teal-950">
         <div className="container-grid max-w-5xl text-center">
           <ScrollFade direction="up">
-            <h2 className="font-serif text-5xl md:text-6xl text-white tracking-tight leading-[1.1] mb-12">
-              Looking for a <span className="italic text-emerald-400 font-light">specific product?</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-12">
+              Looking for a <span className="italic text-emerald-400 font-light break-words">specific product?</span>
             </h2>
             <div className="flex flex-col sm:flex-row justify-center gap-8">
               <Link href="/quote">

@@ -137,7 +137,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   {product.category}
                 </span>
                 
-                <h1 className="font-serif text-5xl md:text-6xl text-teal-950 tracking-tight leading-[1.05] mb-8 break-words">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-teal-950 tracking-tight leading-[1.05] mb-8 break-words">
                   <span className="italic">{product.name}</span>
                 </h1>
                 

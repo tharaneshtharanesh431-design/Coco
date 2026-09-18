@@ -44,8 +44,8 @@ export default function ProcessPage() {
                 </span>
               </div>
               
-              <h1 className="font-serif text-5xl md:text-7xl lg:text-[7.5rem] leading-[1.05] text-white mb-12 tracking-tight">
-                From the farm <span className="italic text-ivory/80 font-light">to the world.</span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl xl:text-[7.5rem] leading-[1.05] text-white mb-12 tracking-tight">
+                From the farm <span className="italic text-ivory/80 font-light break-words">to the world.</span>
               </h1>
               
               <div className="border-t border-teal-800/50 pt-10">
@@ -190,8 +190,8 @@ export default function ProcessPage() {
             <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-400 font-medium italic block mb-8">
               International Markets
             </span>
-            <h2 className="font-serif text-5xl md:text-6xl text-white tracking-tight leading-[1.1] mb-10">
-              Supplying the <span className="italic font-light text-emerald-400">globe.</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-[1.1] mb-10">
+              Supplying the <span className="italic font-light text-emerald-400 break-words">globe.</span>
             </h2>
             <p className="text-teal-100/80 font-serif italic text-xl leading-relaxed mb-16 max-w-2xl mx-auto">
               Our logistical operations are structured to supply importers, distributors, wholesalers, and commercial buyers across the Middle East, Europe, and Asia.
