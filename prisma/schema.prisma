@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model QuoteRequest {
+  id                     String   @id @default(cuid())
+  fullName               String
+  companyName            String
+  businessEmail          String
+  phone                  String?
+  countryRegion          String
+  buyerType              String
+  product                String
+  quantityRequirement    String
+  preferredPackaging     String?
+  additionalRequirements String?
+  message                String
+  status                 QuoteStatus @default(PENDING)
+  createdAt              DateTime @default(now())
+}
+
+enum QuoteStatus {
+  PENDING
+  REVIEWING
+  QUOTED
+  REJECTED
+}

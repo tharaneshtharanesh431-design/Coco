@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ivory text-teal-900 font-sans antialiased selection:bg-teal-900 selection:text-ivory;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-teal-950 tracking-tight;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-1 ring-emerald-500 ring-offset-1 ring-offset-ivory;
+  }
+}
+
+@layer components {
+  /* Minimal utilities for cases where we don't want a full component */
+  .section-padding {
+    @apply py-24 lg:py-40;
+  }
+  
+  .container-grid {
+    @apply max-w-[1400px] mx-auto px-6 lg:px-12;
+  }
+}
