@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import prisma from '@/lib/prisma';
 import { Card } from '@/components/common/Card';
 import { StatusUpdater } from './StatusUpdater';
+import { CustomerOnboarding } from './CustomerOnboarding';
 
 export const dynamic = 'force-dynamic';
 
@@ -39,6 +40,10 @@ export default async function EnquiryDetail({
         <div className="mb-10 pb-10 border-b border-gray-200">
           <h2 className="font-serif text-2xl mb-6 text-teal-800">Status Management</h2>
           <StatusUpdater enquiryId={enquiry.id} currentStatus={enquiry.status} />
+        </div>
+
+        <div className="mb-10 pb-10 border-b border-gray-200">
+          <CustomerOnboarding enquiryId={enquiry.id} hasCompany={!!enquiry.companyId} />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
