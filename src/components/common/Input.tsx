@@ -14,9 +14,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const errorId = `${id}-error`;
 
     return (
-      <div className={cn('flex flex-col gap-1.5', fullWidth && 'w-full', className)}>
+      <div className={cn('flex flex-col gap-2', fullWidth && 'w-full', className)}>
         {label && (
-          <label htmlFor={id} className="text-sm font-medium text-teal-900 font-sans">
+          <label htmlFor={id} className="text-xs font-sans tracking-[0.05em] text-teal-900/80 uppercase">
             {label}
           </label>
         )}
@@ -26,15 +26,16 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           aria-invalid={!!error}
           aria-describedby={error ? errorId : undefined}
           className={cn(
-            'flex h-12 w-full rounded-md border border-teal-200 bg-white px-4 py-2 text-sm text-teal-900 shadow-sm transition-colors',
-            'placeholder:text-teal-900/40',
-            'focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600',
-            'disabled:cursor-not-allowed disabled:opacity-50',
-            error && 'border-red-500 focus:ring-red-500 focus:border-red-500'
+            'flex h-12 w-full rounded-none border-b border-teal-900/20 bg-ivory/50 px-4 py-2 text-sm text-teal-950 transition-all duration-400 ease-cinematic',
+            'placeholder:text-teal-900/30',
+            'hover:border-teal-900/50 hover:bg-white',
+            'focus:outline-none focus:border-emerald-700 focus:bg-white focus:ring-1 focus:ring-emerald-700',
+            'disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-ivory-100',
+            error && 'border-red-500 focus:border-red-500 focus:ring-red-500'
           )}
           {...props}
         />
-        {error && <span id={errorId} className="text-xs text-red-500 font-medium break-words">{error}</span>}
+        {error && <span id={errorId} className="text-[10px] tracking-wide text-red-500 font-medium break-words uppercase">{error}</span>}
       </div>
     );
   }

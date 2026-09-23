@@ -117,11 +117,11 @@ export async function POST(
 
     // 10. Send the invitation email using Resend
     if (process.env.RESEND_API_KEY) {
-      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
       const inviteUrl = `${baseUrl}/portal/accept-invite?token=${rawToken}`;
       
       try {
-        await resend.emails.send({
+        const { error } = await resend.emails.send({
           from: process.env.CONTACT_EMAIL_FROM || 'onboarding@resend.dev',
           to: businessEmail,
           subject: 'Invitation to VERDECOCO Customer Portal',
@@ -130,14 +130,17 @@ export async function POST(
             inviteUrl,
           }),
         });
+
+        if (error) {
+          console.error(`[Email Delivery Failed] Invite for ${businessEmail}`);
+          return NextResponse.json({ success: false, error: 'Failed to send invitation email' }, { status: 500 });
+        }
       } catch (emailError) {
-        console.error(`[Email Delivery Failed] Invite for ${businessEmail}`);
-        // We do not fail the request if email fails, as the token is generated, 
-        // but normally we should probably handle email delivery guarantees.
+        console.error(`[Email Delivery Exception] Invite for ${businessEmail}`);
+        return NextResponse.json({ success: false, error: 'Failed to send invitation email' }, { status: 500 });
       }
     } else {
       console.warn('[Email Warning] RESEND_API_KEY is not set. Skipping invitation email.');
-      console.log(`[Development] Raw token: ${rawToken}`); // ONLY for local debug since email isn't sent
     }
 
     return NextResponse.json({ success: true, companyId: company!.id });

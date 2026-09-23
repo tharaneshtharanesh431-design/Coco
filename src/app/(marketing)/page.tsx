@@ -7,7 +7,11 @@ import { FadeIn as ScrollFade } from '@/components/animations/FadeIn';
 import { Button } from '@/components/common/Button';
 import { products } from '@/services/mockData';
 import { Logo } from '@/components/common/Logo';
+import { GlobeLines } from '@/components/animations/GlobeLines';
 import { Metadata } from 'next';
+import { ParallaxImage } from '@/components/animations/ParallaxImage';
+import { TextReveal } from '@/components/animations/TextReveal';
+import { MagneticButton } from '@/components/animations/MagneticButton';
 
 export const metadata: Metadata = {
   title: 'VERDECOCO | Premium Coconut Export',
@@ -22,18 +26,15 @@ export default function Home() {
     <div className="flex flex-col w-full bg-ivory">
       
       {/* SECTION 1 — HERO REDESIGN */}
-      <section className="relative min-h-[70vh] md:min-h-screen flex items-end pb-12 md:pb-16 lg:pb-32 pt-32 md:pt-40 overflow-hidden">
-        {/* Background Image: No heavy blur, subtle overlay for text contrast */}
+      <section className="relative min-h-[85vh] md:min-h-[110vh] flex items-end pb-16 md:pb-24 lg:pb-40 pt-32 md:pt-40 overflow-hidden">
+        {/* Background Image: Parallax */}
         <div className="absolute inset-0 z-0 bg-teal-950">
-          <Image 
+          <ParallaxImage 
             src="/images/product-fresh.jpg"
             alt="Indian coconut harvest"
-            fill
-            sizes="100vw"
-            className="object-cover object-[center_60%] opacity-80"
-            priority
+            overlay={true}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-teal-950/90 via-teal-950/20 to-teal-950/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-teal-950/90 via-teal-950/40 to-teal-950/20"></div>
         </div>
         
         <div className="container-grid relative z-10 w-full flex flex-col justify-end">
@@ -47,27 +48,29 @@ export default function Home() {
                 </span>
               </div>
               
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl xl:text-[7.5rem] leading-[1.05] text-white mb-12 tracking-tight">
-                From source <br />
-                <span className="italic text-ivory/80 font-light break-words">to global scale.</span>
+              <h1 className="font-serif text-4xl md:text-6xl lg:text-[7.5rem] xl:text-[9rem] leading-[0.9] text-white mb-12 tracking-tight flex flex-col">
+                <TextReveal text="From source" delay={0.1} />
+                <span className="italic text-ivory/70 font-light break-words -mt-2 md:-mt-6 pr-4">
+                  <TextReveal text="to global scale." delay={0.3} />
+                </span>
               </h1>
               
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-16 items-end mt-12 lg:mt-24 border-t border-teal-800/50 pt-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-16 items-end mt-12 lg:mt-32 border-t border-teal-800/30 pt-10">
                 <div className="lg:col-span-7">
                   <p className="text-teal-100/90 text-lg md:text-xl leading-relaxed font-light font-serif italic max-w-2xl">
                     We supply premium agricultural products to international B2B buyers. Defined by absolute integrity, powered by reliable export operations.
                   </p>
                 </div>
                 <div className="lg:col-span-5 flex flex-col sm:flex-row gap-6 sm:gap-8 lg:justify-end">
-                  <Link href="/products">
-                    <Button variant="text" className="text-white hover:text-emerald-300 border-white/40 hover:border-emerald-300 text-sm" withArrow>
+                  <Link href="/products" className="inline-block">
+                    <MagneticButton className="px-6 py-4 bg-transparent border border-white/40 text-white rounded-full hover:bg-white hover:text-teal-950 transition-colors text-sm font-medium tracking-wide">
                       Explore Portfolio
-                    </Button>
+                    </MagneticButton>
                   </Link>
-                  <Link href="/quote">
-                    <Button variant="text" className="text-teal-400 hover:text-white border-teal-800/50 hover:border-white text-sm" withArrow>
-                      Talk to our team
-                    </Button>
+                  <Link href="/quote" className="inline-block">
+                    <MagneticButton className="px-6 py-4 bg-emerald-600 border border-emerald-600 text-white rounded-full hover:bg-emerald-700 hover:border-emerald-700 transition-colors text-sm font-medium tracking-wide">
+                      Request a Quote
+                    </MagneticButton>
                   </Link>
                 </div>
               </div>
@@ -83,29 +86,30 @@ export default function Home() {
             
             <div className="lg:col-span-6 lg:col-start-7 order-1 lg:order-2">
               <ScrollFade direction="left">
-                <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-teal-950 mb-10 leading-[1.1] tracking-tight">
-                  A premium standard in <br/> <span className="italic text-emerald-800 font-light break-words">agricultural export.</span>
+                <h2 className="font-serif text-4xl md:text-6xl lg:text-[5.5rem] text-teal-950 mb-10 leading-[1] tracking-tight flex flex-col">
+                  <TextReveal text="A premium standard in" delay={0.1} />
+                  <span className="italic text-emerald-800 font-light break-words -mt-2">
+                    <TextReveal text="agricultural export." delay={0.4} />
+                  </span>
                 </h2>
                 <div className="w-full h-px bg-teal-900/10 mb-10"></div>
-                <p className="text-teal-900 text-lg md:text-xl leading-relaxed font-serif italic max-w-xl mb-12">
+                <p className="text-teal-900 text-lg md:text-2xl leading-relaxed font-serif italic max-w-xl mb-12">
                   Headquartered in India, VERDECOCO represents the intersection of rich agricultural heritage and rigorous modern export operations. We are dedicated to providing the international market with products sourced responsibly and processed to exact global standards.
                 </p>
-                <Link href="/about">
-                  <Button variant="text" className="text-teal-950 hover:text-emerald-700 border-teal-900/20" withArrow>
+                <Link href="/about" className="inline-block">
+                  <MagneticButton className="px-6 py-4 bg-transparent border border-teal-900/20 text-teal-950 rounded-full hover:bg-teal-950 hover:text-white transition-colors text-sm font-medium tracking-wide">
                     Discover Our Heritage
-                  </Button>
+                  </MagneticButton>
                 </Link>
               </ScrollFade>
             </div>
             
             <div className="lg:col-span-5 lg:col-start-1 order-2 lg:order-1 relative">
-              <ScrollFade direction="up" className="relative w-full aspect-[4/5] lg:aspect-[3/4]">
-                <Image 
+              <ScrollFade direction="up" className="relative w-full aspect-[4/5] lg:aspect-[3/4] overflow-hidden rounded-sm">
+                <ParallaxImage 
                   src="/images/home-about.jpg" 
                   alt="VERDECOCO Quality Assessment" 
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                  overlay={false}
                 />
                 {/* Minimal editorial framing */}
                 <div className="absolute -bottom-6 -right-6 w-full h-full border border-teal-900/10 z-0 pointer-events-none hidden lg:block"></div>
@@ -252,49 +256,54 @@ export default function Home() {
       {/* SECTION 6 — QUALITY (COMMANDING IMAGE) */}
       <section className="relative h-[85vh] min-h-[700px] flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image 
+          <ParallaxImage 
             src="/images/about-process.jpg" 
-            alt="Quality Control" 
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
+            alt="Quality Control"
+            overlay={true}
           />
-          <div className="absolute inset-0 bg-teal-950/40 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-teal-950/80 via-transparent to-teal-950/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-teal-950/80 via-transparent to-teal-950/40 pointer-events-none"></div>
         </div>
         
         <div className="relative z-10 container-grid max-w-5xl">
           <ScrollFade direction="up">
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-[6rem] text-white leading-tight mb-10 tracking-tight">
-              Uncompromising <br/><span className="italic font-light text-ivory/90 break-words">integrity.</span>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-[7rem] text-white leading-[0.9] mb-10 tracking-tight flex flex-col items-center">
+              <TextReveal text="Uncompromising" delay={0.1} />
+              <span className="italic font-light text-ivory/90 break-words mt-2">
+                <TextReveal text="integrity." delay={0.3} />
+              </span>
             </h2>
             <div className="w-16 h-px bg-white/30 mx-auto mb-10"></div>
             <p className="text-white/80 font-serif italic text-xl md:text-2xl font-light max-w-2xl mx-auto mb-12 leading-relaxed">
               Every coconut is individually inspected to ensure physical integrity and optimal maturity before it is cleared for export.
             </p>
-            <Link href="/quality">
-              <Button variant="text" className="text-white border-white/40 hover:text-emerald-300 hover:border-emerald-300" withArrow>
+            <Link href="/quality" className="inline-block">
+              <MagneticButton className="px-8 py-4 bg-transparent border border-white/40 text-white rounded-full hover:bg-white hover:text-teal-950 transition-colors text-sm font-medium tracking-wide">
                 Read Our Standards
-              </Button>
+              </MagneticButton>
             </Link>
           </ScrollFade>
         </div>
       </section>
 
       {/* SECTION 7 — GLOBAL MARKETS */}
-      <section className="section-padding bg-white text-center">
-        <div className="container-grid max-w-4xl">
+      <section className="section-padding bg-teal-950 text-center relative overflow-hidden">
+        {/* Abstract background globe lines */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-40">
+          <GlobeLines />
+        </div>
+        
+        <div className="container-grid max-w-4xl relative z-10">
           <ScrollFade>
-            <Logo variant="compact" theme="dark" className="w-8 h-8 mx-auto mb-10 opacity-50" />
-            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-teal-900/50 mb-8 italic">International Trade</p>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-teal-950 tracking-tight leading-[1.1] mb-12">
-              Connecting supply with <br/> <span className="italic text-teal-800 font-light break-words">global demand.</span>
+            <Logo variant="compact" theme="emerald" className="w-8 h-8 mx-auto mb-10 opacity-80" />
+            <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-emerald-400 mb-8 italic">International Trade</p>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white tracking-tight leading-[1.1] mb-12">
+              Connecting supply with <br/> <span className="italic text-teal-300 font-light break-words">global demand.</span>
             </h2>
-            <p className="text-teal-800/80 font-serif italic text-xl leading-relaxed max-w-2xl mx-auto mb-16">
+            <p className="text-teal-100/80 font-serif italic text-xl leading-relaxed max-w-2xl mx-auto mb-16">
               We facilitate international B2B transactions by bridging the gap between premium Indian agricultural supply and the demanding requirements of global buyers. Our operations support consistent volume and reliable delivery channels worldwide.
             </p>
             <Link href="/global-markets">
-              <Button variant="text" className="text-teal-950 hover:text-emerald-700 border-teal-900/20" withArrow>
+              <Button variant="outline" className="text-white border-white/20 hover:text-emerald-400 hover:border-emerald-400" withArrow>
                 Explore Global Operations
               </Button>
             </Link>
@@ -350,16 +359,16 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="flex flex-col gap-8 shrink-0">
-              <Link href="/quote">
-                <Button variant="primary" size="lg" className="w-full justify-between" withArrow>
+            <div className="flex flex-col sm:flex-row gap-6 shrink-0 mt-8 md:mt-0">
+              <Link href="/quote" className="inline-block w-full sm:w-auto">
+                <MagneticButton className="w-full sm:w-auto px-8 py-5 bg-emerald-600 border border-emerald-600 text-white rounded-full hover:bg-emerald-700 hover:border-emerald-700 transition-colors text-sm font-medium tracking-wide text-center">
                   Request a Quote
-                </Button>
+                </MagneticButton>
               </Link>
-              <Link href="/contact">
-                <Button variant="outline" size="lg" className="w-full justify-between text-white border-white/30 hover:border-white" withArrow>
+              <Link href="/contact" className="inline-block w-full sm:w-auto">
+                <MagneticButton className="w-full sm:w-auto px-8 py-5 bg-transparent border border-white/30 text-white rounded-full hover:border-white transition-colors text-sm font-medium tracking-wide text-center">
                   Contact Office
-                </Button>
+                </MagneticButton>
               </Link>
             </div>
           </ScrollFade>

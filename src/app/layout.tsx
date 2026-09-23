@@ -4,6 +4,7 @@ import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { GoogleAnalytics } from '@/components/common/GoogleAnalytics';
+import { PageTransitionProvider } from '@/components/animations/PageTransitionProvider';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
@@ -82,9 +83,11 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} antialiased bg-ivory text-teal-900 font-sans flex flex-col min-h-screen`}>
         <GoogleAnalytics />
         <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <PageTransitionProvider>
+          <main className="flex-grow">
+            {children}
+          </main>
+        </PageTransitionProvider>
         <Footer />
       </body>
     </html>

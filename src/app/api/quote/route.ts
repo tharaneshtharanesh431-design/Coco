@@ -4,6 +4,9 @@ import prisma from '@/lib/prisma';
 import { checkRateLimit } from '@/lib/rate-limit';
 import { Resend } from 'resend';
 import { QuoteNotificationEmail } from '@/components/emails/QuoteNotificationEmail';
+import { cookies } from 'next/headers';
+import { CUSTOMER_SESSION_COOKIE_NAME, CustomerJwtPayload } from '@/lib/customer-auth';
+import { jwtVerify } from 'jose';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -79,14 +82,64 @@ export async function POST(req: Request) {
 
     const validData = validationResult.data;
 
-    // 5. Persist with Prisma (Safe database access)
+    // 5. Enforce Authentication (B2B Requirement)
+    const cookieStore = await cookies();
+    const sessionCookie = cookieStore.get(CUSTOMER_SESSION_COOKIE_NAME)?.value;
+    
+    if (!sessionCookie) {
+      return NextResponse.json(
+        { success: false, error: 'Authentication required to submit a quote.' },
+        { status: 401 }
+      );
+    }
+    
+    // Verify session
+    let sessionPayload;
+    try {
+      const secret = process.env.JWT_SECRET_CUSTOMER;
+      if (!secret) throw new Error('Missing JWT_SECRET_CUSTOMER');
+      
+      const key = new TextEncoder().encode(secret);
+      const { payload } = await jwtVerify(sessionCookie, key, { algorithms: ['HS256'] });
+      sessionPayload = payload as unknown as CustomerJwtPayload;
+    } catch (e) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid or expired session.' },
+        { status: 401 }
+      );
+    }
+
+    if (!sessionPayload.companyId) {
+      return NextResponse.json(
+        { success: false, error: 'Session is missing company association.' },
+        { status: 403 }
+      );
+    }
+
+    // 6. Fetch user and company to auto-fill immutable fields
+    const user = await prisma.user.findUnique({
+      where: { id: sessionPayload.userId },
+      include: { company: true }
+    });
+
+    if (!user) {
+      return NextResponse.json(
+        { success: false, error: 'User not found.' },
+        { status: 404 }
+      );
+    }
+
+    // 7. Persist with Prisma (Safe database access, strictly tied to companyId)
     const quoteRequest = await prisma.quoteRequest.create({
       data: {
-        fullName: validData.fullName,
-        companyName: validData.companyName,
-        businessEmail: validData.businessEmail,
+        // Enforced Server-Side derived fields
+        fullName: user.fullName,
+        companyName: user.company.name,
+        businessEmail: user.email,
+        countryRegion: user.company.countryRegion,
+        companyId: sessionPayload.companyId,
+        // Client-provided fields
         phone: validData.phone || null,
-        countryRegion: validData.countryRegion,
         buyerType: validData.buyerType,
         product: validData.product,
         quantityRequirement: validData.quantityRequirement,
@@ -97,21 +150,21 @@ export async function POST(req: Request) {
       }
     });
 
-    // 6. Attempt to Send Email Notification
+    // 8. Attempt to Send Email Notification
     try {
       if (process.env.RESEND_API_KEY) {
         await resend.emails.send({
           from: process.env.CONTACT_EMAIL_FROM || 'onboarding@resend.dev',
           to: process.env.CONTACT_EMAIL_TO || 'tharaneeshm2416@gmail.com',
-          replyTo: validData.businessEmail,
+          replyTo: user.email,
           subject: `New B2B Enquiry - ${quoteRequest.id}`,
           react: QuoteNotificationEmail({
             id: quoteRequest.id,
-            fullName: validData.fullName,
-            companyName: validData.companyName,
-            businessEmail: validData.businessEmail,
+            fullName: user.fullName,
+            companyName: user.company.name,
+            businessEmail: user.email,
             phone: validData.phone,
-            countryRegion: validData.countryRegion,
+            countryRegion: user.company.countryRegion,
             buyerType: validData.buyerType,
             product: validData.product,
             quantityRequirement: validData.quantityRequirement,
@@ -134,7 +187,7 @@ export async function POST(req: Request) {
       // The database persistence succeeded, so we continue to return 201 Created.
     }
 
-    // 7. Return Success 201
+    // 9. Return Success 201
     // The client only learns that the enquiry was received, not whether the email was delivered.
     return NextResponse.json(
       { success: true, id: quoteRequest.id },
@@ -142,7 +195,7 @@ export async function POST(req: Request) {
     );
 
   } catch (error) {
-    // 7. Prevent DB error leakage / Error masking
+    // 10. Prevent DB error leakage / Error masking
     // In production, we log internally but do not return stack traces
     console.error('Quote Submission Error:', error);
     

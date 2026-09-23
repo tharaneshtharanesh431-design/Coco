@@ -3,27 +3,36 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-ivory text-teal-900 font-sans antialiased selection:bg-teal-900 selection:text-ivory;
+    @apply bg-ivory text-teal-900 font-sans antialiased selection:bg-teal-950 selection:text-ivory;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif text-teal-950 tracking-tight;
   }
 
-  /* Focus styles for accessibility */
+  /* Premium focus styles for accessibility */
   *:focus-visible {
-    @apply outline-none ring-1 ring-emerald-500 ring-offset-1 ring-offset-ivory;
+    @apply outline-none ring-2 ring-emerald-600 ring-offset-2 ring-offset-ivory transition-all duration-300;
   }
 }
 
 @layer components {
-  /* Minimal utilities for cases where we don't want a full component */
+  /* Editorial breathing room */
   .section-padding {
-    @apply py-16 lg:py-40;
+    @apply py-24 lg:py-48;
   }
   
   .container-grid {
-    @apply max-w-[1400px] mx-auto px-6 lg:px-12;
+    @apply max-w-[1400px] mx-auto px-6 lg:px-12 w-full;
+  }
+
+  /* Premium form layout utils */
+  .form-group {
+    @apply flex flex-col gap-2;
   }
 }
